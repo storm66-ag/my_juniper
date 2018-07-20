@@ -8,7 +8,7 @@ FLOW_INkb="0"
 TOTALkb="0"
 FILTERdir="/etc/flow-tools/scripts/flows/filters/mobifon.acl"
 
-EMAIL1="alexbb@motivtelecom.ru"
+EMAIL1="alexxgruzdov@gmail.com"
 EMAIL2="79043828661@sms.ycc.ru"
 
 R1="192.168.96.3"
