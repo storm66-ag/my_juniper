@@ -1,0 +1,31 @@
+#!/usr/bin/expect -f
+
+
+set Username "expectuser"
+set Password "mirc0nf1g$"
+
+set IPsgw [lindex $argv 0]
+set TERM [lindex $argv 1]
+set POLICER [lindex $argv 2]
+
+
+set timeout -1
+spawn ssh -2 expectuser@$IPsgw
+match_max 100000
+expect "*assword:"
+send -- "$Password\r"
+expect ">"
+send -- "edit\r"
+expect "#"
+send -- "set firewall family inet filter FROM-INTERNET term $TERM-DW then policer $POLICER\r"
+send -- "set firewall family inet filter TO-INTERNET term $TERM-UP then policer $POLICER\r"
+expect "#"
+send -- "commit\r"
+expect "#"
+send -- "exit\r"
+expect ">"
+send -- "request system logout user expectuser\r"
+send -- "exit\r"
+
+expect eof
+
