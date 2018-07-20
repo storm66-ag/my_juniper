@@ -409,7 +409,7 @@ dbCon.close()
 
 receivers = ['alexxgruzdov@gmail.com']
 for r in receivers:
-    os.system(' echo "Письмо создано автоматически" | mutt  -s  "Cеть Спутниковой Связи.Услуги за %s"  %s -a /usr/traffic-counter/tarifs/limit/month_report/reports/%s.xls' % (month,r,date) )
+    os.system(' echo "Письмо создано автоматически" | mutt  -s  "Cеть  Связи.Услуги за %s"  %s -a /usr/traffic-counter/tarifs/limit/month_report/reports/%s.xls' % (month,r,date) )
 os.system(' echo "Отчет успешно создан!" | mutt  -s  "Услуги за %s" 79043828661@sms.ru ' %(month))
 
 print "Hello1"
