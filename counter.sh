@@ -2,11 +2,11 @@
 
 TIME_RANGE=" `date --date "5 minute ago" +%H:%M`-`date +%H:%M`"
 MYSQLdb="netflow"
-MYSQLtb="MOBIFON_5MIN"
+MYSQLtb="Host_5MIN"
 FLOW_OUTkb="0"
 FLOW_INkb="0"
 TOTALkb="0"
-FILTERdir="/etc/flow-tools/scripts/flows/filters/mobifon.acl"
+FILTERdir="/etc/flow-tools/scripts/flows/filters/host.acl"
 
 EMAIL1="alexxgruzdov@gmail.com"
 EMAIL2="79043828661@sms.ycc.ru"
@@ -64,7 +64,7 @@ if [ "$OIDin_R1" ] && [ "$OIDout_R1" ]
 	echo BYTES_OUT_R1: $BYTES_OUT_R1
 else 
 	echo "Error get data for $i from $R1"	
-	echo "Error get data for $i from $R1" | mail -s "Mobifon-2000_Vsat__Service" "$EMAIL1"  
+	echo "Error get data for $i from $R1" | mail -s "2000_Vsat__Service" "$EMAIL1"  
 	echo "Error get data for $i from $R1" | mail -s "OSS_Service" "$EMAIL2"
 fi
 
@@ -85,7 +85,7 @@ if [ "$OIDin_R2" ] && [ "$OIDout_R2" ]
         BYTES_OUT_R2="`snmpget -Os -c oss-router  -v 1 $RJ2cnt"$OIDout_R2" | awk '{print $4}' `"
         echo BYTES_OUT_R2: $BYTES_OUT_R2
 else 
-	echo "Error get data for $i from $R2" | mail -s "Mobifon-2000_Vsat__Service" "$EMAIL1"
+	echo "Error get data for $i from $R2" | mail -s "-2000_Vsat__Service" "$EMAIL1"
 	echo "Error get data for $i from $R2" | mail -s "OSS_Service" "$EMAIL2"
 	echo "Error get data for $i from $R2"
 
