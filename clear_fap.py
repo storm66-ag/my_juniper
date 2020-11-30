@@ -18,7 +18,7 @@ from jnpr.junos.utils.config import Config
 from jnpr.junos.exception import LockError
 from pprint import pprint
 
-receivers= [ 'alexbb@motivtelecom.ru' , '79043828661@sms.ycc.ru' ]
+receivers= [ 'email1' , 'email2' ]
 routers = ['192.168.96.3' ,  '192.168.96.4'] 
 
 ##########Обрабатываем ID###############################################
