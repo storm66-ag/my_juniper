@@ -7,10 +7,10 @@ FLOW_OUTkb="0"
 FLOW_INkb="0"
 TOTALkb="0"
 name="lte_s1"
-###FILTERdir="/etc/flow-tools/scripts/flows/filters/mobifon.acl"
+###FILTERdir="/etc/flow-tools/scripts/flows/filters/host.acl"
 
-EMAIL1="alexxgruzdov@gmail.com"
-EMAIL2="79043828661@sms.ycc.ru"
+EMAIL1="email1"
+EMAIL2="email2"
 
 R1="192.168.96.3"
 R2="192.168.96.4"
@@ -67,7 +67,7 @@ if [ "$OIDin_R1" ] && [ "$OIDout_R1" ]
 	echo BYTES_OUT_R1: $BYTES_OUT_R1
 else 
 	echo "Error get data for $i from $R1"	
-	echo "Error get data for $i from $R1" | mail -s "Mobifon-2000_Vsat__Service" "$EMAIL1"  
+	echo "Error get data for $i from $R1" | mail -s "2000_Vsat__Service" "$EMAIL1"  
 	echo "Error get data for $i from $R1" | mail -s "OSS_Service" "$EMAIL2"
 fi
 
