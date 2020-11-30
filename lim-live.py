@@ -9,8 +9,8 @@ import pymysql
 MODEMS = []
 
 try:
-    db_billing = pymysql.connect(host="172.26.0.53", user="root", passwd="iDirect", db="billing")
-    db_netflow = pymysql.connect(host="172.26.0.53", user="root", passwd="iDirect", db="netflow")
+    db_billing = pymysql.connect(host="172.26.0.53", user="root", passwd="Password", db="billing")
+    db_netflow = pymysql.connect(host="172.26.0.53", user="root", passwd="Password", db="netflow")
     with db_billing.cursor() as cursor:
         sqlModem = "SELECT modem_sn FROM modems WHERE tariff RLIKE 'lim'"
         cursor.execute(sqlModem)
