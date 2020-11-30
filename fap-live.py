@@ -25,7 +25,7 @@ routers = ["192.168.96.3","192.168.96.4"]
 ##########Обрабатываем ID###############################################
 
 try:
-    db1 = pymysql.connect(host="localhost", user="root", passwd="iDirect", db="billing", charset="utf8", init_command="SET NAMES UTF8")
+    db1 = pymysql.connect(host="localhost", user="root", passwd="Password", db="billing", charset="utf8", init_command="SET NAMES UTF8")
 except (pymysql.OperationalError, pymysql.ProgrammingError):
     print ("Проблемы соединения с базой данных Billing!")
 c1 = db1.cursor()  #Создаем единый курсор для DB Billing
@@ -43,7 +43,7 @@ for d in data1:
 #################Соединяемся с БД трафика################################
 
 try:
-    db2=pymysql.connect(host="localhost", user="root", passwd="iDirect", db="netflow") # DB для считывания трафика
+    db2=pymysql.connect(host="localhost", user="root", passwd="Password", db="netflow") # DB для считывания трафика
 except (pymysql.OperationalError, pymysql.ProgrammingError):
     print ("Проблемы соединения с базой данных Netflow!")
 c2=db2.cursor()
