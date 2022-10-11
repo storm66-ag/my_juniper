@@ -23,7 +23,7 @@ run_speed = 1024
 
 for i in routers:
     print i
-    a_dev = Device(host=i, user="apipy", password='@pi2o16$')
+    a_dev = Device(host=i, user="apipy", password='pswd')
     try:
         a_dev.open()
     except Exception as err:
