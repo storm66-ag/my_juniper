@@ -8,8 +8,8 @@ FLOW_INkb="0"
 TOTALkb="0"
 FILTERdir="/etc/flow-tools/scripts/flows/filters/host.acl"
 
-EMAIL1="alexxgruzdov@gmail.com"
-EMAIL2="79043828661@sms.ycc.ru"
+EMAIL1="email1@email1"
+EMAIL2="email2@email2"
 
 R1="192.168.96.3"
 R2="192.168.96.4"
@@ -24,12 +24,12 @@ RJ2oid="$R2 iso.3.6.1.4.1.2636.3.5.2.1.7"
 RJ2cnt="$R2 iso.3.6.1.4.1.2636.3.5.2.1.5."
 
 
-MYSQLcon1="mysql -u root -piDirect billing"
-MYSQLcon2="mysql -u root -piDirect netflow"
+MYSQLcon1="mysql -u root -p<password> billing"
+MYSQLcon2="mysql -u root -p<password> netflow"
 
 
 ##########Read from Mysql DB serial number#############
-mysql -D billing -u root -piDirect -e "SELECT modem_sn FROM modems where error=0" -N > modem_sn.txt
+mysql -D billing -u root -p<password> -e "SELECT modem_sn FROM modems where error=0" -N > modem_sn.txt
 sleep 1
 
 ###########Start script###############################
@@ -85,8 +85,8 @@ if [ "$OIDin_R2" ] && [ "$OIDout_R2" ]
         BYTES_OUT_R2="`snmpget -Os -c oss-router  -v 1 $RJ2cnt"$OIDout_R2" | awk '{print $4}' `"
         echo BYTES_OUT_R2: $BYTES_OUT_R2
 else 
-	echo "Error get data for $i from $R2" | mail -s "-2000_Vsat__Service" "$EMAIL1"
-	echo "Error get data for $i from $R2" | mail -s "OSS_Service" "$EMAIL2"
+	echo "Error get data for $i from $R2" | mail -s "Subject" "$EMAIL1"
+	echo "Error get data for $i from $R2" | mail -s "Subject" "$EMAIL2"
 	echo "Error get data for $i from $R2"
 
 fi                                        
