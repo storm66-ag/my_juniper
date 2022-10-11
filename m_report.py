@@ -205,7 +205,7 @@ print "Hello"
 
 ############Отправка email#############################################################
 
-os.system(' echo "Данные по трафику" | mutt  -s  "Услуги передачи данных за %s"  alexbb@motivtelecom.ru -a /usr/traffic-counter/tarifs/limit/month_report/python/%s.xls' % (month,date) )
+os.system(' echo "Данные по трафику" | mutt  -s  "Услуги передачи данных за %s"  alexbb@email -a /usr/traffic-counter/tarifs/limit/month_report/python/%s.xls' % (month,date) )
 
 print "Hello1"
 
