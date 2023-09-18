@@ -103,7 +103,7 @@ wb = xlwt.Workbook()  #Создание рабочей книги
 ##########Собираем ID###############
 id = [ ]
 try:
-    dbId = MySQLdb.connect(host="localhost", user="root", passwd="iDirect", db="billing", charset="utf8", init_command="SET NAMES UTF8")
+    dbId = MySQLdb.connect(host="localhost", user="root", passwd="<password>", db="billing", charset="utf8", init_command="SET NAMES UTF8")
 except (MySQLdb.OperationalError, MySQLdb.ProgrammingError), e:
     print "Проблемы соединения с базой данных Billing!"
     sys.exit()
@@ -121,7 +121,7 @@ print id
 ##########Обрабатываем ID###########################
 
 try:
-    dbCon = MySQLdb.connect(host="localhost", user="root", passwd="iDirect", db="billing", charset="utf8", init_command="SET NAMES UTF8")
+    dbCon = MySQLdb.connect(host="localhost", user="root", passwd="<password>", db="billing", charset="utf8", init_command="SET NAMES UTF8")
 except (MySQLdb.OperationalError, MySQLdb.ProgrammingError), e:
     print "Проблемы соединения с базой данных Billing!"
 c1 = dbCon.cursor()  #Создаем единый курсор для DB Billing
@@ -231,7 +231,7 @@ for i in id:
 	   ################################################################
 	   #################Считываем трафик для каждого модема из списка#####################################################
             try:
-				db2=MySQLdb.connect(host="localhost", user="root", passwd="iDirect", db="netflow") # DB для считывания трафика
+				db2=MySQLdb.connect(host="localhost", user="root", passwd="<password>", db="netflow") # DB для считывания трафика
             except (MySQLdb.OperationalError, MySQLdb.ProgrammingError), e:
 				print "Проблемы соединения с базой данных Netflow!"
             c2=db2.cursor() 
