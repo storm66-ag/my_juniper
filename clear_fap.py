@@ -24,7 +24,7 @@ routers = ['192.168.96.3' ,  '192.168.96.4']
 ##########Обрабатываем ID###############################################
 
 try:
-    db1 = pymysql.connect(host="localhost", user="root", passwd="iDirect", db="billing", charset="utf8", init_command="SET NAMES UTF8")
+    db1 = pymysql.connect(host="localhost", user="root", passwd="<password>", db="billing", charset="utf8", init_command="SET NAMES UTF8")
 except (pymysql.OperationalError, pymysql.ProgrammingError):
     print ("Проблемы соединения с базой данных Billing!")
     for r in receivers:
@@ -110,7 +110,7 @@ for m in modems:
 
     for i in routers:
         print i
-        a_dev = Device(host=i, user="apipy", password="@pi2o16$")
+        a_dev = Device(host=i, user="apipy", password="@<password>")
         try:
             a_dev.open()
         except Exception as err:
